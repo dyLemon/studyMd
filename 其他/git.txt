@@ -1,0 +1,59 @@
+git add .  添加暂存区域
+git commit -m '信息' 
+
+git pull origin dev --rebase
+
+git push origin **
+
+
+//临时上需求 发其中一些任务得版本（dev有代码，master没有)
+ 
+ 切换master分支  拉取代码 ，在本地创建个分支git checkout -b 分支名
+
+将dev或者其余分支得需要上线得代码合并到本地分支上  git cherry-pick  找到需要临时上线得分支（eg.9cd8354f2b48a711d7280b64a8c6d493a9bb180d）
+ 
+将本地分支push到远端（远端就新增了自己新建得本地分支）----------在进行合并到master
+
+
+git reset 回退版本得哈希索引 -------版本回退
+
+
+
+
+//版本合并
+git merge 分支名（将分支名合并到当前分支）   解决冲突得时候 解决完直接add commit pull push
+
+
+新建分支的时候 如果要先和远程关联 正常操作 然后后面输入git push  就会出来提示 叫关联 输入就ok
+
+
+有时你提交过代码之后，发现一个地方改错了，你下次提交时不想保留上一次的记录；或者你上一次的commit message的描述有误，这时候你可以使用接下来的这个命令：git commit --amend。
+
+git commit --amend 重新提交是在日志看不到操作记录的
+
+
+
+
+ git checkout test             # 将当前功能分支 切换到测试分支
+: git pull origin test                 # 拉去test分支最新代码
+ git merge feature/xxx                # 将功能分支合并到测试分支
+# 若有冲突 需要现在本地解决完所有冲突
+git add .                 # 将修改的文件存放到暂存区
+
+拉取代码的时候和本地冲突，解决了冲突，--add后
+git rebase --continue  '冲突解决--在push
+
+git push origin test         # 将本地分支版本上传到远程仓库
+
+# 若没有冲突 直接push到远程仓库
+ git push origin test      
+
+
+
+同步远程分支
+git fetch 将本地分支与远程保持同步
+git checkout -b 本地分支名x  origin/远程分支名x   拉取远程分支并同时创建对应的本地分支
+
+
+review 工具 代码检查 同一次提交，你修改了之后，git add .  git commit --amend  然后 rbt post -r 132
+

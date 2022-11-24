@@ -1,0 +1,27 @@
+proxy 解决跨域 
+
+
+只会在开发环境下才会进入proxy 
+ 
+跨域 浏览器请求才会产生跨域（浏览器安全设置的）  服务器之间不会跨域 
+Proxy 其实就是本地启了一个node 服务，网页发起的请求会先经过node，然后再请求后端服务器
+
+
+proxy: {
+      //配置跨域,可参见官方文档https://webpack.js.org/configuration/dev-server/#devserverproxy
+      "/api": {
+        target: "http://192.168.122.24:8888", //跨域地址 192.168.122.31
+        ws: true, //如果要代理WebSockets,设置为true
+        changOrigin: true, //默认flase,将主机头的原点更改为目标URL
+        pathRewrite: {
+          //如果不希望传递/api，则需要重写路径：
+          "^/api": "",
+        },
+      },
+    },
+
+
+
+当yarn build 后 用Live Server打开     Live Server（本地服务器)vscode 直接安装插件插件）
+
+交给部署 部署到服务器上  都不会进入proxy了

@@ -21,7 +21,7 @@ git reset 回退版本得哈希索引 -------版本回退
 
 
 //版本合并
-git merge 分支名（将分支名合并到当前分支）   解决冲突得时候 解决完直接add commit pull push
+git merge 分支名（将分支名合并到当前分支）   解决冲突得时候 解决完直接add commit (解决完冲突不需要在pull --rebase,直接push) push
 
 
 新建分支的时候 如果要先和远程关联 正常操作 然后后面输入git push  就会出来提示 叫关联 输入就ok

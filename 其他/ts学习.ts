@@ -6,7 +6,6 @@ function demo(par: number): number {
 function demo1<T>(par: T): T {
   return par;
 }
-
 demo1<number>(1);
 
 const demo3 = <T>(par: T): T => {

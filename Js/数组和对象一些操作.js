@@ -29,3 +29,28 @@ console.log(flatArr.flat(3));
  */
 console.log(Math.pow(2,10));
 console.log(2 ** 10);
+
+
+//递归工具函数
+const tree =(organization)=>{
+    let arr = []
+    organization.map(item => {
+      let obj = {
+        label: item.companyName,
+        value: item.companyCode 
+      }
+      if (item.childList
+      ) {
+        obj.children = tree(item.childList)
+      }
+      arr.push(obj)
+    })
+    return arr
+}
+
+let data =[{
+    companyName:'qq',
+    companyCode:'01',
+    childList:[{}]
+}]
+tree(data)

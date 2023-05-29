@@ -28,21 +28,21 @@
       const res = getData(flatArr);
       console.log("res", res);
       //递归方式
-      //   function getTreeData(arr, parentId) {
-      //     function loop(parentId) {
-      //       return arr.reduce((pre, cur) => {
-      //         if (cur.parentId === parentId) {
-      //           cur.children = loop(cur.id);
-      //           pre.push(cur);
-      //         }
+        // function getTreeData(arr, parentId) {
+        //   function loop(parentId) {
+        //     return arr.reduce((pre, cur) => {
+        //       if (cur.parentId === parentId) {
+        //         cur.children = loop(cur.id);
+        //         pre.push(cur);
+        //       }
 
-      //         return pre;
-      //       }, []);
-      //     }
-      //     return loop(parentId);
-      //   }
-      //   const res = getTreeData(flatArr, 0);
-      //   console.log("res", res);
+        //       return pre;
+        //     }, []);
+        //   }
+        //   return loop(parentId);
+        // }
+        // const res = getTreeData(flatArr, 0);
+        // console.log("res", res);
     </script>
   </body>
 </html>
